@@ -1,0 +1,100 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tuan Putri 💌</title>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #fff0f5;
+      text-align: center;
+      padding: 50px;
+      color: #333;
+    }
+    h1 {
+      font-size: 2em;
+      margin-bottom: 30px;
+    }
+    .button {
+      display: inline-block;
+      margin: 10px;
+      padding: 15px 25px;
+      font-size: 1em;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    .yes-button {
+      background-color: #ff6f91;
+      color: white;
+    }
+    .yes-button:hover {
+      background-color: #ff4d6d;
+    }
+    .no-button {
+      background-color: #cccccc;
+      color: #333;
+    }
+    .no-button:hover {
+      background-color: #aaa;
+    }
+    #modal {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      justify-content: center;
+      align-items: center;
+    }
+    #modal-content {
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      max-width: 400px;
+    }
+  </style>
+</head>
+<body>
+  <audio autoplay loop>
+    <source src="https://www.bensound.com/bensound-music/bensound-romantic.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+  <div id="page1">
+    <h1>Tuan Putri, Jumat tanggal 13 Juni kita jalan yuk, keluar. Aku mau lepas kangen 💖</h1>
+    <button class="button yes-button" onclick="goToPage2()">Iya, hayu ndoro</button>
+    <button class="button no-button" onclick="showModal()">g, sono lu jauh jauh pergi!</button>
+  </div>
+
+  <div id="modal">
+    <div id="modal-content">
+      <p>🙅‍♀️ Ealahhh... bukan pilihan yang tepat tuh 😤<br><br>Yuk ah, klik yang bener 👉 ‘Iya, hayu ndoro’</p>
+      <button onclick="closeModal()">Hehe, maaf 😅</button>
+    </div>
+  </div>
+
+  <div id="page2" style="display: none;">
+    <h1>Baik Tuan Putri, di tanggal 13 Juni akan dijemput pada pukul 14.00 ✨<br><br>
+    Dresscode: senyum manis dan hati bahagia 💕</h1>
+  </div>
+
+  <script>
+    function showModal() {
+      document.getElementById("modal").style.display = "flex";
+    }
+
+    function closeModal() {
+      document.getElementById("modal").style.display = "none";
+    }
+
+    function goToPage2() {
+      document.getElementById("page1").style.display = "none";
+      document.getElementById("page2").style.display = "block";
+    }
+  </script>
+</body>
+</html>

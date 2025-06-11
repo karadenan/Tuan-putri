@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Untuk Ma Belle Fleur 🌸</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      background: #fce4ec; /* pastel pink */
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+    }
+    h1 {
+      font-size: 2em;
+      color: #d81b60;
+    }
+    .photo {
+      margin: 10px;
+      max-width: 300px;
+      border-radius: 20px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+    .quote, .message {
+      background: #fff8e1;
+      border-radius: 15px;
+      padding: 15px;
+      margin: 15px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      max-width: 600px;
+    }
+    .music {
+      margin: 20px;
+    }
+    .vent-box {
+      background: #e3f2fd;
+      border-radius: 15px;
+      padding: 20px;
+      margin-top: 20px;
+      text-align: center;
+    }
+    textarea {
+      width: 100%;
+      max-width: 400px;
+      height: 100px;
+      padding: 10px;
+      border-radius: 10px;
+      border: none;
+      resize: none;
+    }
+    button {
+      margin-top: 10px;
+      background: #81d4fa;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 20px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    .fly {
+      animation: flyAway 2s forwards;
+    }
+    @keyframes flyAway {
+      0% { transform: translateY(0); opacity: 1; }
+      100% { transform: translateY(-300px); opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+  <h1>Hai, Ma Belle Fleur 🌸</h1>
+  <div class="message">
+    <p>Ma Belle fluer, gemes dan imutku. Lagi badmood yah? Siapa atau apasih yang berani bikin gitu kamu? 😠😡🤬</p>
+  </div>
+
+  <img src="1000111009.jpg" class="photo">
+  <img src="1000111014.jpg" class="photo">
+  <img src="1000111011.jpg" class="photo">
+
+  <div class="music">
+    <p>Dengarkan ini dulu ya sayang 💖</p>
+    <iframe width="300" height="200" src="https://www.youtube.com/embed/r27t3H36jmU" frameborder="0" allowfullscreen></iframe>
+  </div>
+
+  <div class="quote">
+    <p>jadi aku bikin gini nih mutt, soalnya semalem sebelum kamu buka website ini aku kepikiran kok bisa ada yang bikin kamu badmood 😌. Ngga bisa tidur aku, makanya aku sempet beli obat tidur di apotik, kata tetehnya gimana coba? Dia bilang pelan pelan dijalan, takut obatnya bangun 🤣</p>
+  </div>
+
+  <div class="vent-box">
+    <h3>Ceritain yuk apa yang bikin kamu badmood 💭</h3>
+    <textarea id="ventText" placeholder="Tulis di sini ya..."></textarea><br>
+    <button onclick="releaseStress()">Lepaskan ✨</button>
+    <div id="flyZone"></div>
+  </div>
+
+  <script>
+    function releaseStress() {
+      const text = document.getElementById('ventText').value;
+      if (text.trim() === '') return;
+
+      const el = document.createElement('div');
+      el.textContent = text;
+      el.className = 'fly';
+      el.style.position = 'absolute';
+      el.style.left = '50%';
+      el.style.transform = 'translateX(-50%)';
+      el.style.color = '#d32f2f';
+      el.style.fontWeight = 'bold';
+
+      document.getElementById('flyZone').appendChild(el);
+      setTimeout(() => el.remove(), 2000);
+      document.getElementById('ventText').value = '';
+    }
+  </script>
+</body>
+</html>
